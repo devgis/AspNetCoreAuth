@@ -1,0 +1,31 @@
+﻿
+//按照官方示例學習
+https://docs.microsoft.com/en-us/aspnet/core/security/authorization/secure-data?view=aspnetcore-6.0
+
+
+dotnet ef 无法执行,因为找不到指定的命令或文件。 可能的原因包括: *你拼错了内置的 dotnet
+dotnet ef 命令提示
+无法执行，因为找不到指定的命令或文档。
+可能的原因包括:
+  *你拼错了内置的 dotnet 命令。
+  *你打算执行 .NET Core 进程，但 dotnet-ef 不存在。
+  *你打算运行全局工具，但在路径上找不到名称前缀为 dotnet 的可执行文档。
+
+解决
+dotnet tool install --global dotnet-ef --version 6.0.5-*
+
+
+Create a new migration and update the database:
+
+.NET CLI
+
+Copy
+dotnet ef migrations add userID_Status
+dotnet ef database update
+
+dotnet user-secrets set SeedUserPW <PW>
+
+localdb 默認實例名：
+(LocalDB)\\MSSqlLocalDB
+
+Data Source=(LocalDB)\\MSSqlLocalDB;Initial Catalog=TestDB;Integrated Security=True;Pooling=False
